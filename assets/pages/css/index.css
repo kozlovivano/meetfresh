@@ -22,6 +22,6 @@ footer a{
   padding: 50px;
   opacity: 0.8;
   text-align: center;
-  background: var(--dark-color);
+  background: var(--dark);
   text-decoration: none;
 }
