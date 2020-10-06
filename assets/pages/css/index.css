@@ -1,0 +1,27 @@
+body{
+  background: url('../../../assets/image/background/bg2.jpg');
+}
+.logo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 150px;
+}
+footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer a{
+  font-size: 3.5rem;
+  color: white;
+  border-radius: 20px;
+  width: 35%;
+  padding: 50px;
+  opacity: 0.8;
+  text-align: center;
+  background: var(--dark-color);
+  text-decoration: none;
+}

@@ -1,0 +1,34 @@
+:root{
+  /* Color pallet */
+  --primary-color: #f2f2f4;
+  --secondary-color: #ffffff;
+  --warning-color: #fdaf17;
+  --header-color: #dd5873;
+  --dark-color: #060709;
+  --font-primary-color: #070709;
+  --font-secondary-color: #fefefe;
+  --font-light-color: #9b9b9b;
+  --danger-color: #e31f2c;
+
+  /* Animations */
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+body{
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open Sans', sans-serif;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  background: transparent;
+  z-index: 1;
+}
