@@ -54,14 +54,24 @@ p{
 .bg-dark{
   background: var(--dark);
 }
+.bg-gray{
+  background: var(--gray);
+}
+.bg-light-gray{
+  background: var(--light-gray);
+}
 .bg-white{
   background: var(--white);
 }
+
 .bg-yellow{
   background: var(--yellow);
 }
 .dark{
   color: var(--dark);
+}
+.danger{
+  color: var(--danger);
 }
 .white{
   color: var(--white);
@@ -102,11 +112,38 @@ p{
 .f-xxs{
   font-size: 1.8rem !important;
 }
+.f-ss{
+  font-size: 1.5rem !important;
+}
 .f-bold{
   font-weight: bolder !important;
 }
 .mt-1{
   margin-top: 10px;
+}
+.mr-1{
+  margin-right: 10px;
+}
+.mr-2{
+  margin-right: 20px;
+}
+.mr-3{
+  margin-right: 30px;
+}
+.mr-4{
+  margin-right: 40px;
+}
+.ml-1{
+  margin-left: 10px;
+}
+.ml-3{
+  margin-left: 30px;
+}
+.px-2{
+  padding: 0 20px;
+}
+.p-5{
+  padding: 50px;
 }
 .w-10{
   width: 10% !important;
@@ -134,6 +171,9 @@ p{
 }
 .w-70{
   width: 70% !important;
+}
+.w-75{
+  width: 75% !important;
 }
 .w-80{
   width: 80% !important;
@@ -226,12 +266,12 @@ p{
   margin-right: 30px;
 }
 
-.items{
+.menu{
   height: fit-content;
   overflow: auto;
   height: 1110px;
 }
-.item{
+.menu-item{
   height: 180px;
   width: 900px;
   background: white;
@@ -241,24 +281,154 @@ p{
   border-bottom-left-radius: 90px;
   box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.4);
 }
-.item img{
+.menu-item img{
   height: 150px;
   width: 150px;
   border-radius: 50%;
   margin-left: 15px;
   margin-top: 5px;
 }
-.item-details{
+.menu-item-details{
   top: 185px;
   left: 75px;
   width: 825px;
   z-index: 2;
+  box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.75);
 }
-.item-details img{
+.menu-item-details img{
   height: 130px;
   width: 130px;
 }
-.item-detail{
+.menu-item-detail{
   padding: 15px;
   border-bottom: 1px solid var(--gray);
+}
+.badge{
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: red;
+  font-size: 2.2rem;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 3.2rem;
+  font-weight: bolder;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: var(--white);
+  margin: 30% auto; /* 15% from the top and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.modal-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  z-index: 3;
+  display: flex;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  color: var(--white);
+  background: var(--dark);
+  font-size: 10rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  right: -40px;
+  top: -40px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+.item-details{
+  display: flex;
+  width: 100%;
+  padding: 100px 50px;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+.item-details img{
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.addons{
+  max-height: 772px;
+  overflow: auto;
+}
+.accordion {
+  background-color: var(--light-gray);
+  color: var(--dark);
+  cursor: pointer;
+  padding: 30px 80px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 2.5rem;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.accordion.active, .accordion:hover {
+  background-color: var(--yellow);
+}
+
+.accordion i {
+  font-weight: bold;
+  float: right;
+}
+
+.panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel .panel-item{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 30px 15px;
+}
+.panel .panel-item.active{
+  background: #bce7fa;
 }
