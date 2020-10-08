@@ -5,6 +5,7 @@
   --yellow: #fdaf17;
   --pink: #dd5873;
   --dark: #060709;
+  --dark-gray: #525252;
   --font-dark: #070709;
   --font-light: #fefefe;
   --gray: #9b9b9b;
@@ -57,15 +58,23 @@ p{
 .bg-gray{
   background: var(--gray);
 }
+.bg-pink{
+  background: var(--pink);
+}
 .bg-light-gray{
   background: var(--light-gray);
 }
 .bg-white{
   background: var(--white);
 }
-
+.bg-dark-gray{
+  background: var(--dark-gray);
+}
 .bg-yellow{
   background: var(--yellow);
+}
+.dark-gray{
+  color: var(--dark-gray);
 }
 .dark{
   color: var(--dark);
@@ -94,6 +103,9 @@ p{
 .f-xxl{
   font-size: 7rem !important;
 }
+.f-xl{
+  font-size: 5rem !important;
+}
 .f-lg{
   font-size: 4rem !important;
 }
@@ -121,6 +133,9 @@ p{
 .mt-1{
   margin-top: 10px;
 }
+.mt-2{
+  margin-top: 20px;
+}
 .mr-1{
   margin-right: 10px;
 }
@@ -141,6 +156,21 @@ p{
 }
 .px-2{
   padding: 0 20px;
+}
+.px-5{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.py-2{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.py-1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.py-5{
+  padding: 50px 0px;
 }
 .p-5{
   padding: 50px;
@@ -223,6 +253,9 @@ p{
 }
 .align-center{
   align-items: center;
+}
+.align-start{
+  align-items: flex-start;
 }
 .absolute{
   position: absolute;
@@ -431,4 +464,24 @@ p{
 }
 .panel .panel-item.active{
   background: #bce7fa;
+}
+
+.cart-items{
+  padding: 50px 100px;
+  height: 1168px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.cart-item{
+  margin-bottom: 50px;
+}
+.ordered-items{
+  height: 800px;
+  overflow: auto;
+  border-bottom: 1px solid var(--gray);
+}
+.checkout-details{
+  height: 369px;
+  overflow: auto;
 }
