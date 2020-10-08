@@ -279,9 +279,9 @@ p{
 }
 
 .category{
+  width: fit-content;
   overflow: auto;
   position: relative;
-  width: fit-content;
   margin: auto;
 }
 .category-item{
@@ -320,6 +320,9 @@ p{
   border-radius: 50%;
   margin-left: 15px;
   margin-top: 5px;
+}
+.menu-item p{
+  white-space: nowrap;
 }
 .menu-item-details{
   top: 185px;

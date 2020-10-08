@@ -16,121 +16,34 @@
       </div>
     </header>
     <div class="content">
-      <div class="category h-270 d-flex flex-row justify-center align-center">
-        <div class="category-item h-50 w-30 bg-white active">
-          <p class="center f-sm mt-1 f-bold">DESSERT</p>
-          <p class="center f-xs f-bold">DESSERT</p>
-        </div>
-        <div class="category-item h-50 w-30 bg-white">
-          <p class="center f-sm mt-1 f-bold">DRINK</p>
-          <p class="center f-xs f-bold">DRINK</p>
-        </div>
-        <div class="category-item h-50 w-30 bg-white">
-          <p class="center f-sm mt-1 f-bold">SNACKS</p>
-          <p class="center f-xs f-bold">SNACKS</p>
+      <div class="w-100" style="overflow: auto">
+        <div class="category h-270 d-flex flex-row align-center justify-center">
+
         </div>
       </div>
       <div class="menu align-center">
-        <div class="menu-item d-flex flex-row align-center relative">
-          <div class="image w-25">
-            <img src="../assets/image/items/art_893.jpg" alt="MeetFresh item image">
-          </div>
-          <div class="description w-60">
-            <p class="f-md f-bold">Icy Grass Jelly</p>
-            <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-          </div>
-          <div class="center w-15">
-            <i class="fa fa-caret-down gray f-lg"></i>
-          </div>
-          <div class="menu-item-details absolute bg-white hide">
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="menu-item d-flex flex-row align-center relative">
-          <div class="image w-25">
-            <img src="../assets/image/items/art_893.jpg" alt="MeetFresh item image">
-          </div>
-          <div class="description w-60">
-            <p class="f-md f-bold">Icy Grass Jelly</p>
-            <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-          </div>
-          <div class="center w-15">
-            <i class="fa fa-caret-down gray f-lg"></i>
-          </div>
-          <div class="menu-item-details absolute bg-white hide">
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-            <div class="menu-item-detail d-flex">
-              <div class="w-25">
-                <img src="../assets/image/items/art_892.jpg" alt="MeetFresh item image">
-              </div>
-              <div class="w-75 d-flex flex-column justify-center">
-                <p class="f-xs">Icy Grass Jelly</p>
-                <p class="f-xxs gray mt-1">Icy Grass Jelly</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
     <footer class="d-flex">
-      <div class="d-flex justify-center align-center w-50 bg-yellow h-100">
+      <div class="d-flex justify-center align-center w-50 bg-yellow h-100" onclick="window.location.href='cart.html'">
         <div class="mr-4 relative">
           <i class="fa fa-shopping-cart f-xxl"></i>
-          <div class="badge">1</div>
+          <div class="badge hide">1</div>
         </div>
-        <div class="">
-          <p class="dark f-sm center f-bold">$7.80</p>
+        <div class="cart hide">
+          <p class="dark f-sm center f-bold price">$7.80</p>
           <p class="dark f-xs center">Before Tax</p>
         </div>
+        <div class="empty-cart">
+          <p class="dark f-sm center f-bold">NO ITEMS</p>
+        </div>
       </div>
-      <div class="d-flex flex-column justify-center align-center bg-dark w-25 h-100">
+      <div class="d-flex flex-column justify-center align-center bg-dark w-25 h-100" onclick="window.location.href='checkout.html'">
         <p class="f-sm white px-2 center">CHECK OUT</p>
         <p class="f-xs white">取消</p>
       </div>
-      <div class="d-flex flex-column justify-center align-center bg-gray w-25 h-100">
+      <div class="d-flex flex-column justify-center align-center bg-gray w-25 h-100" onclick="clearCart()">
         <p class="f-sm white">CLEAR</p>
         <p class="f-xs white">取消</p>
       </div>
@@ -138,158 +51,20 @@
 
     <div class="modal">
       <div class="modal-content">
-        <span class="close" onclick="modal_close()">&times;</span>
+        <span class="close" onclick="modalClose()">&times;</span>
         <div class="item-details">
-          <div class="w-40 d-flex justify-center align-center">
-            <img src="../assets/image/items/art_893.jpg" alt="">
-          </div>
-          <div class="w-60 d-flex flex-column justify-center align-start ml-3">
-            <p class="f-md f-bold">Icy Grass Jelly #3</p>
-            <p class="f-xxs gray">Icy Grass Jelly #3</p>
-            <p class="f-xxs dark mt-1 f-bold">Grass Jelly, Grass Jelly Shaved Ice, Read Beans, Peanuts, Boba</p>
-            <p class="f-ss gray mt-1">Icy Grass Jelly #3</p>
-            <p class="f-ss danger mt-1">*Contains Peanuts / peanut</p>
-          </div>
+
         </div>
         <div class="addons">
-          <div class="addon">
-            <div class="accordion">
-              ICE / CH <span class="f-ss">*Required</span>
-              <i class="fa fa-caret-down dark f-lg"></i>
-            </div>
-            <div class="panel">
-              <div class="d-flex flex-row justify-around p-5">
-                <div class="bg-light-gray w-20 panel-item active">
-                  <p class="center f-xxs f-bold">REGULAR</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">LESS ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">NO ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">HOT</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="addon">
-            <div class="accordion">
-              SUGAR / CH <span class="f-ss">*Required</span>
-              <i class="fa fa-caret-down dark f-lg"></i>
-            </div>
-            <div class="panel">
-              <div class="d-flex flex-row justify-around p-5">
-                <div class="bg-light-gray w-20 panel-item active">
-                  <p class="center f-xxs f-bold">REGULAR</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">LESS ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">NO ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">HOT</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="addon">
-            <div class="accordion">
-              $0.1 TOPPING / $0.1 CH <span class="f-ss">*Optional</span>
-              <i class="fa fa-caret-down dark f-lg"></i>
-            </div>
-            <div class="panel">
-              <div class="d-flex flex-row justify-around p-5">
-                <div class="bg-light-gray w-20 panel-item active">
-                  <p class="center f-xxs f-bold">REGULAR</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">LESS ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">NO ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">HOT</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="addon">
-            <div class="accordion">
-              $0.1 TOPPING / $0.5 CH <span class="f-ss">*Optional</span>
-              <i class="fa fa-caret-down dark f-lg"></i>
-            </div>
-            <div class="panel">
-              <div class="d-flex flex-row justify-around p-5">
-                <div class="bg-light-gray w-20 panel-item active">
-                  <p class="center f-xxs f-bold">REGULAR</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">LESS ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">NO ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">HOT</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="addon">
-            <div class="accordion">
-              QUANTITY / CH <span class="f-ss">*Required</span>
-              <i class="fa fa-caret-down dark f-lg"></i>
-            </div>
-            <div class="panel">
-              <div class="d-flex flex-row justify-around p-5">
-                <div class="bg-light-gray w-20 panel-item active">
-                  <p class="center f-xxs f-bold">REGULAR</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">LESS ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">NO ICE</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-                <div class="bg-light-gray w-20 panel-item">
-                  <p class="center f-xxs f-bold">HOT</p>
-                  <p class="center f-xxs">CH</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
       <div class="modal-footer">
-        <div class="d-flex flex-column justify-center align-center w-75 bg-yellow h-100">
+        <div class="d-flex flex-column justify-center align-center w-75 bg-yellow h-100" onclick="addToCart()">
           <p class="f-sm dark f-bold">ADD TO CART</p>
           <p class="f-xs dark">取消取消取消</p>
         </div>
-        <div class="d-flex flex-column justify-center align-center bg-gray w-25 h-100" onclick="modal_close()">
+        <div class="d-flex flex-column justify-center align-center bg-gray w-25 h-100" onclick="modalClose()">
           <p class="f-sm white">CLEAR</p>
           <p class="f-xs white">取消</p>
         </div>
@@ -297,5 +72,6 @@
     </div>
   </body>
 </html>
-<script type="text/javascript" src="../assets/global.js"></script>
+<script type="text/javascript" src="../assets/data.js"></script>
+<script type="text/javascript" src="../assets/custom.js"></script>
 <script type="text/javascript" src="../assets/pages/js/menu.js"></script>
