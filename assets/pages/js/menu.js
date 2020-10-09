@@ -47,7 +47,6 @@ window.onload = () => {
       selectCategory(item.getAttribute('data-category-id'));
     })
   })
-
 }
 
 let selectCategory = (category_id) => {
@@ -286,12 +285,13 @@ let getAddons = (article_id) => {
 /* Page functions */
 let addToCart = () => {
   ordered_articles.push({
+    id: new Date().getTime(),
     article: selected_article[0],
     qty: qty,
     sugar_level: sugar_level,
     ice_level: ice_level,
     toppings_primary: [],
-    toppings_secondary: [],
+    toppings_secondary: []
   });
   updateCart();
   modalClose();
