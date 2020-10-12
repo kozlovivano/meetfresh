@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member</title>
+    <title>Payment</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,23 +11,26 @@
   <body class="bg-light-gray">
     <header>
       <div class="header-title">
-        <p class="left f-sm">Show Your Membership Barcode</p>
-        <p class="left f-sm">on Our APP. Or Join Later.</p>
+        <p class="left f-sm">Please select the payment type</p>
         <p class="left mt-1 f-xs">點選標籤選擇</p>
       </div>
     </header>
     <div class="content d-flex flex-column justify-center align-between" style="height: 1380px;">
-      <div class="member d-flex flex-column justify-center align-center bg-white" style="height: 550px; margin: 0 150px; padding: 0 100px" onclick="window.location.href='payment.html'">
-        <p class="f-sm f-bold center">Member <span>CH</span></p>
-        <img class="mt-4" src="../assets/image/background/barcode.png" alt="">
-        <p class="f-xs center mt-4">Scan Your Barcode</p>
-        <p class="f-xs center">CH</p>
+      <div class="member d-flex flex-column justify-center align-center bg-white" style="height: 400px; margin: 0 150px; margin-top: 30px;">
+        <p class="f-sm f-bold center">Gift card <span>CH</span></p>
+        <img class="mt-4" src="../assets/image/background/payment1.png" alt="" width="500">
+        <p class="f-xxs center mt-4">Scan to pay in the store</p>
       </div>
-      <div class="nonmember d-flex flex-column justify-center align-center bg-white" style="height: 550px; margin: 0 150px; padding: 0 100px; margin-top: 50px;" onclick="window.location.href='payment.html'">
-        <p class="f-sm f-bold center">Member <span>CH</span></p>
-        <img class="mt-4" src="../assets/image/background/nonmember.png" alt="" width="200">
-        <p class="f-xs center mt-4">Join Later</p>
-        <p class="f-xs center">CH</p>
+      <div class="member d-flex flex-column justify-center align-center bg-white" style="height: 400px; margin: 0 150px; margin-top: 30px;">
+        <p class="f-sm f-bold center">Credit card <span>CH</span></p>
+        <img class="mt-4" src="../assets/image/background/payment2.png" alt="" width="500">
+        <p class="f-xxs center mt-4">Please insert your card</p>
+        <p class="f-xxs center">and do not remove it</p>
+      </div>
+      <div class="member d-flex flex-column justify-center align-center bg-white" style="height: 400px; margin: 0 150px; margin-top: 30px;">
+        <p class="f-sm f-bold center">Quick pay <span>CH</span></p>
+        <img class="mt-4" src="../assets/image/background/payment3.png" alt="" width="500">
+        <p class="f-xxs center mt-4">Scan QR code to complete the payment</p>
       </div>
     </div>
     <footer class="d-flex">
