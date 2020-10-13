@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone number input</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-title">
+        <p class="left f-sm">Enter your phone number</p>
+        <p class="left f-xs">We'll text when your order is ready</p>
+        <p class="left mt-1 f-xs">點選標籤選擇</p>
+      </div>
+    </header>
+    <div class="content d-flex flex-column justify-center align-center" style="height: 1380px;">
+      <div class="phone-number">
+
+      </div>
+      <div class="keyboard">
+        <div class="row">
+          <p class="key">1</p><p class="key">2</p><p class="key">3</p>
+        </div>
+        <div class="row">
+          <p class="key">4</p><p class="key">5</p><p class="key">6</p>
+        </div>
+        <div class="row">
+          <p class="key">7</p><p class="key">8</p><p class="key">9</p>
+        </div>
+        <div class="row">
+          <p class="clear">&times;</p><p class="key">0</p><p class="back"><i class="fa fa-angle-left"></i></p>
+        </div>
+      </div>
+    </div>
+    <footer class="d-flex">
+      <div class="d-flex flex-column justify-center align-center w-50 bg-yellow h-100" onclick="phoneEnter()">
+        <p class="f-sm dark f-bold">ENTER</p>
+        <p class="f-xs dark f-bold">取消</p>
+      </div>
+      <div class="d-flex flex-column justify-center align-center bg-dark w-50 h-100" onclick="window.location.href='../index.html'">
+        <p class="f-sm white">CANCEL</p>
+        <p class="f-xs white">取消</p>
+      </div>
+    </footer>
+  </body>
+</html>
+<script type="text/javascript" src="../assets/jquery.js"></script>
+<script type="text/javascript" src="../assets/data.js"></script>
+<script type="text/javascript" src="../assets/custom.js"></script>
+<script type="text/javascript" src="../assets/pages/js/phone.js"></script>
