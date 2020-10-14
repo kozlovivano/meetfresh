@@ -22,12 +22,34 @@ let renderCartItems = () => {
               <p class="f-xs">${item.article.description}</p>
               <p class="f-xs">${item.article.description_chinese}</p>
               <p class="f-ss mt-1">Ice Level: ${item.ice_level.toUpperCase()} Sweet Level: ${item.sugar_level.toUpperCase()}</p>
-              <p class="f-ss mt-1">Topping: Read Bean * 1, Caramel Pudding * 1, Grass Jelly * 1, Black Sugar Boba * 2</p>
+              <p class="f-ss mt-1">Topping: ${
+                (() => {
+                  let ret = '';
+                  item.toppings_primary.forEach(_item => {
+                    ret += `${_item.description} * ${_item.qty} `;
+                  })
+                  item.toppings_secondary.forEach(_item => {
+                    ret += `${_item.description} * ${_item.qty} `;
+                  })
+                  return ret;
+                })()
+              }</p>
             </div>
           </div>
           <div class="cart-item-parameters d-flex w-100 mt-2">
-            <div class="w-40 d-flex justify-center align-center">
+            <div class="w-40 d-flex justify-center align-center flex-column">
               <p class="f-lg i-price">$${(item.qty * parseFloat(item.article.price)).toFixed(2)}</p>
+              <p class="f-xs gray i-price"> + $${(() => {
+                  let topping_price = 0;
+                  item.toppings_primary.forEach(_item => {
+                    topping_price += parseFloat(_item.qty) * 0.1;
+                  })
+                  item.toppings_secondary.forEach(_item => {
+                    topping_price += parseFloat(_item.qty) * 0.5;
+                  })
+                  return topping_price.toFixed(2);
+                  })()}
+              </p>
             </div>
             <div class="w-60 d-flex justify-between align-center">
               <div class="bg-light-gray w-20 f-lg center i-qty" style="border-radius: 20px;">${item.qty}</div>
@@ -97,6 +119,12 @@ let updateCart = () => {
     let price = 0;
     ordered_articles.forEach(item => {
       price += parseFloat(item.article.price) * item.qty;
+      item.toppings_primary.forEach(_item => {
+        price += _item.qty * 0.1;
+      })
+      item.toppings_secondary.forEach(_item => {
+        price += _item.qty * 0.5;
+      })
     })
     document.querySelector('.price').innerHTML = '$' + price.toFixed(2);
   }

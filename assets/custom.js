@@ -34,7 +34,7 @@ let autoCancelTrans = () => {
 		'background': 'var(--pink)',
 		'line-height': '190px',
     'color': 'white',
-		'z-index': '10',
+		'z-index': '1001',
 		'opacity': '1'
 	});
 	let layout = $('<div class="layout"></div>').css({
@@ -43,7 +43,8 @@ let autoCancelTrans = () => {
 		'height': '100%',
 		'background': 'rgba(0, 0, 0, 0.7)',
 		'top': '0',
-		'display': 'none'
+		'display': 'none',
+    'z-index': '1000'
 	});
 	let alertDiv = $('<div class="alertDiv">Are you still there?</div>').css({
 		'position': 'absolute',
@@ -57,7 +58,8 @@ let autoCancelTrans = () => {
 		'text-align': 'center',
 		'font-size': '80px',
 		'padding-top': '100px',
-		'display': 'none'
+		'display': 'none',
+    'z-index': '1000'
 	})
 	$('body').append(countdown);
 	$('body').append(layout);
@@ -72,7 +74,7 @@ let autoCancelTrans = () => {
 			  alertDiv.css({'display': 'block'});
 		  }else if(timeleft == 0){
         emptyCart();
-			  window.location.href="../index.html?cancel=1"
+        window.location.href="../index.html?cancel=1";
 		  }else{
 
 		  }
@@ -94,4 +96,6 @@ let autoCancelTrans = () => {
 	  idleCheckPeriod: 1000
 	});
 }
-window.onload = autoCancelTrans();
+if(window.location.href.indexOf('index.html') == -1){
+  window.onload = autoCancelTrans();
+}

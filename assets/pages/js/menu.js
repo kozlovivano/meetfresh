@@ -1,3 +1,6 @@
+const TOPPINGS_PRIMARY = ['BOBA', 'ICE CREAM', 'Melon Jelly', 'TARO BALL'];
+const TOPPINGS_SECONDARY = ['TOFU PUDDING', 'Peanut', 'Melon Jelly', 'Herbal Jelly'];
+
 let ice_level = 'regular';
 let sugar_level = 'regular';
 let toppings_primary = []; // 0.1 topping
@@ -134,6 +137,8 @@ let selectArticle = (article_id) => {
 }
 
 let getAddons = (article_id) => {
+  toppings_primary = [];
+  toppings_secondary = [];
   let tag = `<div class="addon">
     <div class="accordion">
       ICE / CH <span class="f-ss">*Required</span>
@@ -183,47 +188,21 @@ let getAddons = (article_id) => {
     </div>
   </div>
   <div class="addon">
-    <div class="accordion">
+    <div class="accordion get-toppings-primary" data-article-id="${article_id}">
       $0.1 TOPPING / $0.1 CH <span class="f-ss">*Optional</span>
       <i class="fa fa-caret-down dark f-lg"></i>
     </div>
     <div class="panel">
-      <div class="toppings">
-        <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
-          <div class="w-50 f-xs center" style="border-radius: 20px;">Topping name</div>
-          <div class="bg-light-gray w-10 f-lg center" style="border-radius: 20px;">1</div>
-          <i class="f-xl fa fa-plus-circle bg-white yellow"></i>
-          <i class="f-xl fa fa-minus-circle bg-white yellow"></i>
-        </div>
-        <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
-          <div class="w-50 f-xs center" style="border-radius: 20px;">Topping name</div>
-          <div class="bg-light-gray w-10 f-lg center" style="border-radius: 20px;">1</div>
-          <i class="f-xl fa fa-plus-circle bg-white yellow"></i>
-          <i class="f-xl fa fa-minus-circle bg-white yellow"></i>
-        </div>
-      </div>
+      <div class="toppings primary-toppings"></div>
     </div>
   </div>
   <div class="addon">
-    <div class="accordion">
+    <div class="accordion get-toppings-secondary" data-article-id="${article_id}">
       $0.1 TOPPING / $0.5 CH <span class="f-ss">*Optional</span>
       <i class="fa fa-caret-down dark f-lg"></i>
     </div>
     <div class="panel">
-      <div class="toppings">
-        <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
-          <div class="w-50 f-xs center" style="border-radius: 20px;">Topping name</div>
-          <div class="bg-light-gray w-10 f-lg center" style="border-radius: 20px;">1</div>
-          <i class="f-xl fa fa-plus-circle bg-white yellow"></i>
-          <i class="f-xl fa fa-minus-circle bg-white yellow"></i>
-        </div>
-        <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
-          <div class="w-50 f-xs center" style="border-radius: 20px;">Topping name</div>
-          <div class="bg-light-gray w-10 f-lg center" style="border-radius: 20px;">1</div>
-          <i class="f-xl fa fa-plus-circle bg-white yellow"></i>
-          <i class="f-xl fa fa-minus-circle bg-white yellow"></i>
-        </div>
-      </div>
+      <div class="toppings secondary-toppings"></div>
     </div>
   </div>
   <div class="addon">
@@ -250,6 +229,7 @@ let getAddons = (article_id) => {
         panel.style.maxHeight = panel.scrollHeight + 'px';
       }
     })
+    getToppings(article_id);
   })
 
   // Ice and sugar level
@@ -281,18 +261,100 @@ let getAddons = (article_id) => {
   })
 }
 
+let getToppings = (article_id) => {
+  let p_toppings = [...TOPPINGS_PRIMARY];
+  let s_toppings = [...TOPPINGS_SECONDARY];
+  let tag = '';
+  p_toppings.forEach(item => {
+    tag += `
+      <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
+        <div class="w-50 f-xs center primary-topping-description" style="border-radius: 20px;">${item}</div>
+        <div class="bg-light-gray w-10 f-lg center primary-topping-count" style="border-radius: 20px;">0</div>
+        <i class="f-xl fa fa-plus-circle bg-white yellow primary-topping-plus"></i>
+        <i class="f-xl fa fa-minus-circle bg-white yellow primary-topping-minus"></i>
+      </div>
+    `;
+  })
+  document.querySelector('.primary-toppings').innerHTML = tag;
+  tag = '';
+  s_toppings.forEach(item => {
+    tag += `
+      <div class="topping d-flex flex-row justify-around px-5 py-2 align-center">
+        <div class="w-50 f-xs center secondary-topping-description" style="border-radius: 20px;">${item}</div>
+        <div class="bg-light-gray w-10 f-lg center secondary-topping-count" style="border-radius: 20px;">0</div>
+        <i class="f-xl fa fa-plus-circle bg-white yellow secondary-topping-plus"></i>
+        <i class="f-xl fa fa-minus-circle bg-white yellow secondary-topping-minus"></i>
+      </div>
+    `;
+  })
+  document.querySelector('.secondary-toppings').innerHTML = tag;
+
+  document.querySelectorAll('.primary-topping-plus').forEach(item => {
+    item.addEventListener('click', function(){
+      let qty = item.parentElement.querySelector('.primary-topping-count').innerHTML;
+      qty++;
+      item.parentElement.querySelector('.primary-topping-count').innerHTML = qty;
+    })
+  })
+  document.querySelectorAll('.secondary-topping-plus').forEach(item => {
+    item.addEventListener('click', function(){
+      let qty = item.parentElement.querySelector('.secondary-topping-count').innerHTML;
+      qty++;
+      item.parentElement.querySelector('.secondary-topping-count').innerHTML = qty;
+    })
+  })
+
+  document.querySelectorAll('.primary-topping-minus').forEach(item => {
+    item.addEventListener('click', function(){
+      let qty = item.parentElement.querySelector('.primary-topping-count').innerHTML;
+      if(qty != 0){
+        qty--;
+      }
+      item.parentElement.querySelector('.primary-topping-count').innerHTML = qty;
+    })
+  })
+  document.querySelectorAll('.secondary-topping-minus').forEach(item => {
+    item.addEventListener('click', function(){
+      let qty = item.parentElement.querySelector('.secondary-topping-count').innerHTML;
+      if(qty != 0){
+        qty--;
+      }
+      item.parentElement.querySelector('.secondary-topping-count').innerHTML = qty;
+    })
+  })
+}
 
 /* Page functions */
 let addToCart = () => {
+  toppings_primary = [];
+  toppings_secondary = [];
+  document.querySelectorAll('.primary-topping-count').forEach(item => {
+    if(item.innerHTML.trim() != 0){
+      toppings_primary.push({
+        description: item.parentElement.querySelector('.primary-topping-description').innerHTML,
+        qty: item.innerHTML.trim()
+      })
+    }
+  })
+  document.querySelectorAll('.secondary-topping-count').forEach(item => {
+    if(item.innerHTML.trim() != 0){
+      toppings_secondary.push({
+        description: item.parentElement.querySelector('.secondary-topping-description').innerHTML,
+        qty: item.innerHTML.trim()
+      })
+    }
+  })
+
   ordered_articles.push({
     id: new Date().getTime(),
     article: selected_article[0],
     qty: qty,
     sugar_level: sugar_level,
     ice_level: ice_level,
-    toppings_primary: [],
-    toppings_secondary: []
+    toppings_primary: [...toppings_primary],
+    toppings_secondary: [...toppings_secondary]
   });
+
   updateCart();
   modalClose();
   // Reset
@@ -300,8 +362,6 @@ let addToCart = () => {
   qty = 1;
   sugar_level = 'regular';
   ice_level = 'regular';
-  toppings_primary = [];
-  toppings_secondary = [];
 }
 let clearCart = () => {
   ordered_articles = [];
@@ -323,6 +383,12 @@ let updateCart = () => {
     let price = 0;
     ordered_articles.forEach(item => {
       price += parseFloat(item.article.price) * item.qty;
+      item.toppings_primary.forEach(_item => {
+        price += parseFloat(_item.qty) * 0.1;
+      })
+      item.toppings_secondary.forEach(_item => {
+        price += parseFloat(_item.qty) * 0.5;
+      })
     })
     document.querySelector('.price').innerHTML = '$' + price.toFixed(2);
   }

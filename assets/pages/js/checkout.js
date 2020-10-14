@@ -24,10 +24,32 @@ let renderCheckoutItems = () => {
             </div>
             <p class="f-xs">${item.article.description_chinese}</p>
             <p class="f-ss mt-1">Ice Level: ${item.ice_level.toUpperCase()} Sweet Level: ${item.sugar_level.toUpperCase()}</p>
-            <p class="f-ss mt-1">Topping: read Bean * 1, Caramel Pudding * 1, Grass Jelly * 1, Black Sugar Boba * 2</p>
+            <p class="f-ss mt-1">Topping: ${
+              (() => {
+                let ret = '';
+                item.toppings_primary.forEach(_item => {
+                  ret += `${_item.description} * ${_item.qty} `;
+                })
+                item.toppings_secondary.forEach(_item => {
+                  ret += `${_item.description} * ${_item.qty} `;
+                })
+                return ret;
+              })()
+            }</p>
           </div>
           <div class="w-30 center">
-            <p class="f-lg f-bold">$${(item.qty * parseFloat(item.article.price)).toFixed(2)}</p>
+            <p class="f-lg i-price">$${(item.qty * parseFloat(item.article.price)).toFixed(2)}</p>
+            <p class="f-xs gray i-price"> + $${(() => {
+                let topping_price = 0;
+                item.toppings_primary.forEach(_item => {
+                  topping_price += parseFloat(_item.qty) * 0.1;
+                })
+                item.toppings_secondary.forEach(_item => {
+                  topping_price += parseFloat(_item.qty) * 0.5;
+                })
+                return topping_price.toFixed(2);
+                })()}
+            </p>
           </div>
         </div>
       `;
@@ -39,6 +61,12 @@ let renerPrices = () => {
   let price_sum = 0;
   ordered_articles.forEach(item => {
     price_sum += item.qty * parseFloat(item.article.price);
+    item.toppings_primary.forEach(_item => {
+      price_sum += _item.qty * 0.1;
+    })
+    item.toppings_secondary.forEach(_item => {
+      price_sum += _item.qty * 0.5;
+    })
   })
   document.querySelectorAll('.total-price').forEach(item => {
     item.innerText = '$' + (price_sum * 1.2).toFixed(2);
